@@ -1,0 +1,25 @@
+<div class="jumbotron py-2">
+    <h1 class="display-4 text-center">Animal Data</h1>
+  </div>
+  <div class="row">
+    <app-animal-form></app-animal-form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Ukuran</th> 
+          <th>Hapus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of service.list"> 
+          <td (click)="populateForm(row)">{{row.name}}</td>
+          <td (click)="populateForm(row)">{{row.size}}</td> 
+          <td>
+            <i class="fa fa-trash-alt fa-lg text-danger" (click)="onDelete(row.animalId)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

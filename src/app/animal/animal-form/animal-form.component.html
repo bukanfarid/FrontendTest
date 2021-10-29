@@ -1,0 +1,34 @@
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="animalId"
+           value="service.formData.animalId" />
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label>Name</label>
+        <input class="form-control form-control-lg" placeholder="Name"
+               name="Name" #firstname="ngModel" [(ngModel)]="service.formData.name" required />
+      </div>
+      <!-->div class="form-group col-md-3">
+        <label>Middle Name</label>
+        <input class="form-control form-control-lg" placeholder="Size"
+               #firstname="ngModel" [(ngModel)]="service.formData.Size" required />
+      </!--div-->
+      <div class="form-group col-md-3">
+        <label>Animal Size</label>
+        <select class="form-control form-control-lg" id="Size"  name="Size" [(ngModel)]="service.formData.size" required>
+          <option [ngValue]="null">Pilih Ukuran Hewan</option>
+          <option [ngValue]="0">Tidak Diketahui</option>
+          <option [ngValue]="1">Mungil</option>
+          <option [ngValue]="2">Kecil</option>
+          <option [ngValue]="3">Sedang</option>
+          <option [ngValue]="4">Besar</option>
+          <option [ngValue]="5">Raksasa</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label>``</label>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
+      </div>
+    </div>
+  </form>
+  

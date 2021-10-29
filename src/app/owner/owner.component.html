@@ -1,0 +1,29 @@
+<div class="jumbotron py-2">
+    <h1 class="display-4 text-center">Owner Data</h1>
+  </div>
+  <div class="row">
+    <app-owner-form></app-owner-form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th> 
+          <th>Prefered Name</th>
+          <th>Accept Notifications</th>
+          <th>Hapus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of service.list"> 
+          <td (click)="populateForm(row)">{{row.FirstName}}</td>
+          <td (click)="populateForm(row)">{{row.LastName}}</td> 
+          <td (click)="populateForm(row)">{{row.PreferedName}}</td> 
+          <td (click)="populateForm(row)">{{row.IsOptInForNotif}}</td> 
+          <td>
+            <i class="fa fa-trash-alt fa-lg text-danger" (click)="onDelete(row.OwnerId)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
